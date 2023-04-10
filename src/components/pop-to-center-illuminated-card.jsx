@@ -9,7 +9,7 @@ const PopToCenterIlluminatedCard = (props) => {
 	const [pop, setPop] = useState(false);
 
 	return (
-		<PopToCenterCard pop={pop} onPopChange={setPop}>
+		<PopToCenterCard className="h-80" pop={pop} onPopChange={setPop}>
 			<IlluminatedCard pop={pop}>{children}</IlluminatedCard>
 		</PopToCenterCard>
 	);

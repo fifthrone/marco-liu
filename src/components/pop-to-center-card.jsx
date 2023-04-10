@@ -13,10 +13,10 @@ import {
 } from "framer-motion";
 
 const PopToCenterCard = (props) => {
-	const { children, pop, onPopChange } = props;
+	const { children, className, pop, onPopChange, poppedWidth=1000, poppedHeight=600 } = props;
 
-	const poppedWidth = 800;
-	const poppedHeight = 496;
+	// const poppedWidth = 1000;
+	// const poppedHeight = 600;
 	const duration = 0.8;
 
 	const { scrollY } = useScroll();
@@ -55,12 +55,12 @@ const PopToCenterCard = (props) => {
 		  };
 
 	const targetXOffset =
-		(windowWidth - Math.min(poppedWidth, windowWidth - 32)) / 2;
+		(windowWidth - Math.min(poppedWidth, windowWidth - 8)) / 2;
 	const targetYOffset =
-		(windowHeight - Math.min(poppedHeight, windowHeight - 32)) / 2;
+		(windowHeight - Math.min(poppedHeight, windowHeight - 8)) / 2;
 
 	return (
-		<div ref={ref} className="absolute inset-0">
+		<div ref={ref} className={`${className}`}>
 			<AnimatePresence>
 				{popState && (
 					<motion.div
@@ -105,8 +105,8 @@ const PopToCenterCard = (props) => {
 				}
 				style={{ y }}
 				// transition={{ duration }}
-				whileTap={popState ? { scale: 1 } : { scale: 0.98 }}
-				className={`absolute rotate-0 select-none`}
+				whileTap={popState ? { scale: 1 } : { scale: 0.95 }}
+				className={`absolute`}
 			>
 				<AnimatePresence>
 					{popState ? (
@@ -114,7 +114,7 @@ const PopToCenterCard = (props) => {
 							onClick={() => {
 								setPopState(false);
 							}}
-							className="absolute right-4 top-4 z-40 flex items-center justify-center rounded-full bg-neutral-800 p-1 hover:bg-neutral-700"
+							className="absolute right-4 top-4 z-40 flex items-center justify-center rounded-full bg-neutral-700 p-1 hover:bg-neutral-600 duration-300"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}

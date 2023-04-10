@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={`${lexend.className}`}>
-			<body className="bg-gradient-to-br from-neutral-900 to-black">
+			<body className="bg-gradient-to-brfrom-neutral-900to-black bg-neutral-800">
 				{children}
 			</body>
 		</html>
