@@ -23,7 +23,7 @@ const MapCard = (props) => {
 			className="h-80"
 			pop={pop}
 			onPopChange={setPop}
-			poppedHeight={800}
+			poppedHeight={900}
 		>
 			<IlluminatedCard pop={pop}>
 				<div className="relative h-full w-full">

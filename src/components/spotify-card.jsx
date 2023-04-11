@@ -1,21 +1,6 @@
-"use client";
-
-import { useState, useEffect, useReducer } from "react";
-import IlluminatedCard from "@/components/illuminated-card";
-import PopToCenterCard from "@/components/pop-to-center-card";
-import { CameraIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
-import FifthTeesDemo from "../../public/fifth-tees/fifth-tees-demo.png";
-import WebFrame from "@/components/web-frame";
-
-import GlowLink from "@/components/glow-link";
-
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 
 const SpotifyCard = (props) => {
-	const [pop, setPop] = useState(true);
-
 	return (
 		// <PopToCenterCard
 		// 	className="h-80"
@@ -66,9 +51,11 @@ const SpotifyCard = (props) => {
 							/>
 						</svg>
 						<div className="flex flex-col space-y-2">
-							<div className="flex flex-row space-x-2 items-center">
-								<div className="h-1 w-1 bg-green-300 rounded-full translate-y-[1px]" />
-								<p className="text-smx font-light text-green-300">Last played</p>
+							<div className="flex flex-row items-center space-x-2">
+								<div className="h-1 w-1 translate-y-[1px] rounded-full bg-green-300" />
+								<p className="text-smx font-light text-green-300">
+									Last played
+								</p>
 							</div>
 							<h1 className="text-2xl text-neutral-100">
 								honest (feat. moon tang)

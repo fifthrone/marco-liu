@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
 	return (
 		<div className="mt-40 mb-20 flex w-full flex-col items-center space-y-2">
-			<Image src={marcoLiuIcon} className="h-16 w-auto" />
+			<Image src={marcoLiuIcon} alt="avatar" className="h-16 w-auto" />
 			<p className="max-w-[500px] text-neutral-600 text-xs leading-4 text-center font-light">
 				Hey there, thanks for visiting my website! Just a few friendly reminders
 				before you explore: By hanging out here, you're agreeing to play by some

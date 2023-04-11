@@ -24,7 +24,7 @@ const FifthTeesCard = (props) => {
 			className="h-80"
 			pop={pop}
 			onPopChange={setPop}
-			poppedHeight={1000}
+			poppedHeight={900}
 		>
 			<IlluminatedCard pop={pop}>
 				<div className="relative h-full w-full">

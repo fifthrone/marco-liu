@@ -25,7 +25,7 @@ const SchematicCard = (props) => {
 			className="h-full"
 			pop={pop}
 			onPopChange={setPop}
-			poppedHeight={800}
+			poppedHeight={900}
 		>
 			<IlluminatedCard pop={pop}>
 				<div className="relative h-full w-full">
