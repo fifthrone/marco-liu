@@ -2,10 +2,14 @@
 
 import { useState, useEffect } from "react";
 
-const TimeCard = (props) => {
-	const [currentTime, setCurrentTime] = useState(null);
-	const [temperature, setTemperature] = useState(null);
-	const [weatherDescription, setWeatherDescription] = useState(null);
+type WeatherData = {
+	temperature: number;
+	description: string;
+};
+
+const TimeCard = () => {
+	const [currentTime, setCurrentTime] = useState<Date | null>(null);
+	const [weather, setWeather] = useState<WeatherData | null>(null);
 
 	useEffect(() => {
 		setCurrentTime(new Date());
@@ -16,14 +20,19 @@ const TimeCard = (props) => {
 	}, []);
 
 	useEffect(() => {
-		const apiKey = "98d3f897b1169ae50603ac27829e9872";
-		const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Hong+Kong&units=metric&appid=${apiKey}`;
-		fetch(apiUrl)
-			.then((response) => response.json())
-			.then((data) => {
-				setTemperature(data.main.temp);
-				setWeatherDescription(data.weather[0].description);
-			});
+		const fetchWeather = async () => {
+			try {
+				const response = await fetch(`/api/weather?location=Hong+Kong`);
+				if (!response.ok) {
+					throw new Error("Failed to fetch weather data");
+				}
+				const data = await response.json();
+				setWeather(data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchWeather();
 	}, []);
 
 	const formattedTime =
@@ -65,13 +74,13 @@ const TimeCard = (props) => {
 					<p className="text-md text-neutral-500">in Hong Kong</p>
 				</>
 			)}
-			{temperature && (
+			{weather && (
 				<div className="mt-6 text-4xl tracking-wide text-white">
-					{Math.round(temperature)}°C
+					{Math.round(weather.temperature)}°C
 				</div>
 			)}
-			{weatherDescription && (
-				<div className="text-md text-neutral-500">{weatherDescription}</div>
+			{weather && (
+				<div className="text-md text-neutral-500">{weather.description}</div>
 			)}
 			<div className="absolute -bottom-[250%] left-1/2 flex h-[300%] w-[200%] -translate-x-1/2 items-center justify-center rounded-full">
 				<div className="bg-sky-950/75 h-[95%] w-[95%] rounded-full blur-xl"></div>

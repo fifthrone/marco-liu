@@ -1,6 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
+import axios from "axios";
+import useSWR from "swr";
 
 const SpotifyCard = (props) => {
+	const { data } = useSWR(
+		"/api/last-listened",
+		(url) => axios.get(url).then((res) => res.data),
+		{ refreshInterval: 10000 }
+	);
 	return (
 		// <PopToCenterCard
 		// 	className="h-80"
@@ -58,10 +65,12 @@ const SpotifyCard = (props) => {
 								</p>
 							</div>
 							<h1 className="text-2xl text-neutral-100">
-								honest (feat. moon tang)
+								{data ? data.name : "honest (feat. moon tang)"}
 							</h1>
 							<h2 className="text-lg font-extralight text-neutral-400">
-								Gareth. T, moon tang
+								{data
+									? data.artists.map((artist) => artist.name).join(", ")
+									: "Gareth.T"}
 							</h2>
 						</div>
 					</div>
