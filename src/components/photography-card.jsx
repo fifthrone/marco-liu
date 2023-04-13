@@ -5,78 +5,32 @@ import IlluminatedCard from "@/components/illuminated-card";
 import PopToCenterCard from "@/components/pop-to-center-card";
 import { CameraIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import FifthTeesDemo from "../../public/fifth-tees/fifth-tees-demo.png";
-import WebFrame from "@/components/web-frame";
 import MountFuji from "../../public/photography/mount-fuji.jpg";
 import Shibuya from "../../public/photography/shibuya.jpg";
 import Dining from "../../public/photography/dining.jpg";
 import Asakusa from "../../public/photography/asakusa.jpg";
 import Fujiyoshida from "../../public/photography/fujiyoshida.jpg";
-
-import GlowLink from "@/components/glow-link";
+import TaiTan1 from "../../public/photography/tai-tan-1.jpg";
+import TaiTan2 from "../../public/photography/tai-tan-2.jpg";
+import TaiTan3 from "../../public/photography/tai-tan-3.jpg";
+import PhotoSlide from "@/components/photo-slide";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-
-function reducer(state, action) {
-	if (action.type === "add") {
-		return state + 1;
-	}
-	throw Error("Unknown action.");
-}
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const PhotographyCard = (props) => {
 	const [pop, setPop] = useState(false);
-	const [offset, dispatch] = useReducer(reducer, 0);
+	const [index, setIndex] = useState(0);
 
-	const photoStack = [MountFuji, Shibuya, Dining, Asakusa, Fujiyoshida];
-
-	const styles = {
-		0: {
-			x: -336,
-			scale: 0.75,
-			opacity: 0,
-			// transitionEnd: { opacity: 1 },
-		},
-		1: {
-			x: -168,
-			scale: 0.75,
-			opacity: 1,
-		},
-		2: {
-			x: 0,
-			scale: 1,
-			opacity: 1,
-		},
-		3: {
-			x: 168,
-			scale: 0.75,
-			opacity: 1,
-		},
-		4: {
-			x: 336,
-			scale: 0.75,
-			opacity: 0,
-			// transitionEnd: { opacity: 0 },
-		},
-	};
-
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			dispatch({ type: "add" });
-		}, 5000);
-
-		return () => {
-			clearInterval(intervalId);
-		};
-	}, []);
+	const photoStack = [MountFuji, Shibuya, Dining, Asakusa, Fujiyoshida, TaiTan1, TaiTan2, TaiTan3];
 
 	return (
 		<PopToCenterCard
 			className="h-80"
 			pop={pop}
 			onPopChange={setPop}
-			poppedHeight={800}
+			poppedHeight={900}
+			poppedWidth={604}
 		>
 			<IlluminatedCard pop={pop}>
 				<div className="relative h-full w-full">
@@ -91,25 +45,7 @@ const PhotographyCard = (props) => {
 							>
 								<div className="absolute bottom-0 right-0 left-0 h-6 rounded-full bg-sky-500 opacity-75 blur-3xl"></div>
 								<div className="relative flex h-full flex-col items-center justify-center space-y-4">
-									<div className="relative h-60 w-full overflow-hidden">
-										{photoStack.map((photo, index) => (
-											<motion.div
-												initial={false}
-												animate={styles[(index + offset) % 5]}
-												transition={{ duration: 1, ease: "easeInOut" }}
-												key={index}
-												className="absolute flex h-full w-full items-center justify-center"
-											>
-												<Image
-													width={100}
-													height={150}
-													src={photo}
-													alt="photo"
-													className="h-auto w-40 rounded-2xl"
-												/>
-											</motion.div>
-										))}
-									</div>
+									<PhotoSlide />
 
 									<div className="relative flex flex-row items-center justify-center space-x-2">
 										<CameraIcon className="h-6 w-6 text-neutral-100" />
@@ -128,30 +64,45 @@ const PhotographyCard = (props) => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className="relative flex h-full flex-col space-y-8 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-20 [&::-webkit-scrollbar]:hidden"
+								className="h-full"
+								// className="relative flex h-full flex-col space-y-8 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-20 [&::-webkit-scrollbar]:hidden"
 							>
-								<div className="flex flex-col space-y-1">
-									<div className="flex flex-row items-center justify-start space-x-12">
-										<h1 className="text-5xl font-semibold">Fifth Tees</h1>
-										<GlowLink>Check it out</GlowLink>
-									</div>
-									<p className="mt-2 text-lg text-neutral-400">
-										A small e-commerce website for selling t-shirts and
-										stickers.
-									</p>
+								<div className="relative h-full overflow-hidden">
+									<motion.div
+										initial={false}
+										animate={{ x: `-${index * 100}%` }}
+										transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+										className="flex"
+									>
+										{photoStack.map((photo, i) => (
+											<div className="h-[min(calc(100vh-8px),900px)] w-[min(calc(100vw-8px),600px)] flex-shrink-0">
+												<Image
+													width={1000}
+													key={i}
+													src={photo}
+													alt="photo"
+													className="aspect-[2/3] h-full w-full object-contain"
+												/>
+											</div>
+										))}
+									</motion.div>
+									{index > 0 ? (
+										<button
+											className="absolute left-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/50"
+											onClick={() => setIndex(index - 1)}
+										>
+											<ChevronLeftIcon className="h-6 w-6" />
+										</button>
+									) : null}
+									{index < photoStack.length - 1 ? (
+										<button
+											className="absolute right-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/50"
+											onClick={() => setIndex(index + 1)}
+										>
+											<ChevronRightIcon className="h-6 w-6" />
+										</button>
+									) : null}
 								</div>
-								<WebFrame>
-									<Image
-										src={FifthTeesDemo}
-										alt="A screenshot from the Fifth Tees Website"
-									/>
-								</WebFrame>
-								<p className="text-xl text-neutral-400">
-									I've been designing T-Shirts Lorem ipsum dolor, sit amet
-									consectetur adipisicing elit. Provident nam fugiat officiis
-									odio iusto sit sint eos vero et perferendis quod, illum rerum
-									ipsa, labore libero veritatis explicabo ea? Eum.
-								</p>
 							</motion.div>
 						)}
 					</AnimatePresence>

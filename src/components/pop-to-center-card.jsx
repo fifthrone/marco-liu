@@ -55,9 +55,9 @@ const PopToCenterCard = (props) => {
 		  };
 
 	const targetXOffset =
-		(windowWidth - Math.min(poppedWidth, windowWidth - 8)) / 2;
+		(windowWidth - Math.min(poppedWidth, windowWidth - 4)) / 2;
 	const targetYOffset =
-		(windowHeight - Math.min(poppedHeight, windowHeight - 8)) / 2;
+		(windowHeight - Math.min(poppedHeight, windowHeight - 4)) / 2;
 
 	return (
 		<div ref={ref} className={`${className}`}>

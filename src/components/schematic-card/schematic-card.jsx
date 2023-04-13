@@ -494,28 +494,29 @@ const SchematicCard = (props) => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className="relative flex h-full flex-col space-y-8 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-16 [&::-webkit-scrollbar]:hidden"
+								className="relative flex h-full flex-col space-y-6 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:space-y-12 sm:p-20 [&::-webkit-scrollbar]:hidden"
 							>
-								<div className="flex flex-col space-y-1">
-									<h1 className="mt-12 text-3xl font-semibold sm:text-4xl">
+								<div className="mt-12 flex flex-col space-y-1 sm:px-12">
+									<h1 className="text-4xl font-semibold sm:text-5xl">
 										Schematic Drawing Tools
 									</h1>
 									<p className="text-md mt-2 text-neutral-400 sm:text-lg">
-										An interactive node-based web apps for drawing schematics
+										An interactive node-based web apps for drawing schematics.
+										Built with React, React Flow, Zustand and Tailwind CSS.
 									</p>
 									<div className="md:text-md w-fit rounded-xl border border-zinc-700 bg-zinc-800 p-1 px-2 text-sm text-zinc-500">
 										Work in Progress
 									</div>
 								</div>
 								<div>
-									<p className="sm:text-md mb-1 text-sm text-neutral-400 ">
-										Here's a little demo:
+									<p className="sm:text-md mb-1 text-sm text-neutral-400 sm:px-12 font-light">
+										Here's a little demo (support desktop only):
 									</p>
 									<WebFrame>
 										<DrawingTools />
 									</WebFrame>
 								</div>
-								<p className="text-lg text-neutral-400 sm:text-xl">
+								<p className="text-lg text-neutral-400 sm:px-12 sm:text-xl">
 									Built with React, React Flow, Zustand, Typescript and Tailwind
 									CSS
 								</p>

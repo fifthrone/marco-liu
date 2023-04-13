@@ -6,6 +6,7 @@ import PopToCenterCard from "@/components/pop-to-center-card";
 import { BuildingStorefrontIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import FifthTeesDemo from "../../public/fifth-tees/fifth-tees-demo.png";
+import Landing from "../../public/fifth-tees/landing.png";
 import WebFrame from "@/components/web-frame";
 
 import CoffeeMattersTshirtMasked from "../../public/fifth-tees/coffeeMattersTshirtMasked.png";
@@ -103,8 +104,8 @@ const FifthTeesCard = (props) => {
 
 								<div className="flex flex-row flex-wrap items-center gap-x-6 gap-y-0">
 									<div className="borderx flex flex-row items-center space-x-3">
-										<BuildingStorefrontIcon className="h-5 w-5 text-green-500x text-neutral-100" />
-										<h2 className="text-2xl font-medium text-green-500x text-neutral-100 ">
+										<BuildingStorefrontIcon className="text-green-500x h-5 w-5 text-neutral-100" />
+										<h2 className="text-green-500x text-2xl font-medium text-neutral-100 ">
 											Fifth Tees
 										</h2>
 									</div>
@@ -125,32 +126,62 @@ const FifthTeesCard = (props) => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className="relative flex h-full flex-col space-y-8 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-20 [&::-webkit-scrollbar]:hidden"
+								className="relative flex h-full flex-col space-y-6 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:space-y-12 sm:p-20 [&::-webkit-scrollbar]:hidden"
 							>
-								<div className="mt-12 flex flex-col space-y-1">
-									<div className="flex flex-col sm:flex-row items-start sm:items-center justify-start space-x-0 sm:space-x-12 space-y-2 sm:space-y-0">
-										<h1 className="text-5xl font-semibold">Fifth Tees</h1>
+								<div className="mt-12 flex flex-col space-y-4 sm:px-12">
+									<div className="flex flex-col items-start justify-start space-x-0 space-y-2 sm:flex-row sm:items-center sm:space-x-12 sm:space-y-0">
+										<h1 className="text-4xl font-semibold sm:text-5xl">
+											Fifth Tees
+										</h1>
 										<GlowLink>Check it out</GlowLink>
 									</div>
-									<p className="mt-2 text-lg text-neutral-400">
+									<p className="text-md mt-2 text-neutral-400 sm:text-lg">
 										A small e-commerce website for selling t-shirts and
-										stickers.
+										stickers. Built with Next.js, React, Redux Toolkit, Tailwind
+										CSS, and Firebase.
 									</p>
 								</div>
 
 								<WebFrame>
 									<Image
-										width={1280}
-										height={898}
+										width={1000}
+										// height={898}
 										src={FifthTeesDemo}
 										alt="A screenshot from the Fifth Tees Website"
 									/>
 								</WebFrame>
-								<p className="text-xl text-neutral-400">
-									I've been designing T-Shirts Lorem ipsum dolor, sit amet
-									consectetur adipisicing elit. Provident nam fugiat officiis
-									odio iusto sit sint eos vero et perferendis quod, illum rerum
-									ipsa, labore libero veritatis explicabo ea? Eum.
+								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									Fifth Tees is an e-commerce website where I showcase my
+									t-shirt designs, which I've been selling on print-on-demand
+									websites. I decided to challenge myself and build the website
+									from scratch. It's built using Next.js, React, Redux Toolkit,
+									Tailwind CSS, and Firebase. The site includes features like
+									user authentication, light and dark mode, as well as
+									persisting user cart and wishlist items between sign-in
+									sessions. Throughout the journey of building this app, I've
+									gained a solid understanding of concepts like server and
+									client components, state management, and I've generally had a
+									lot of fun.
+								</p>
+								<WebFrame>
+									<Image
+										width={1000}
+										// height={898}
+										src={Landing}
+										alt="A screenshot from the Fifth Tees Website"
+									/>
+								</WebFrame>
+								<p className="text-md pb-40 font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									One of the biggest challenges I faced was building the landing
+									page. It involved sticky positioning, background transitions,
+									staggered fade-in and fade-out transitions on scroll, and
+									floating stickers with varying scroll speeds to create a
+									parallax effect. It took a significant amount of time to make
+									all the animations work well together and ensure that the
+									components were reusable to prevent code duplication. If I
+									were to build it again, I would definitely use the Framer
+									Motion library. This is because it offers much more control
+									over scroll behavior with just a few lines of code.
 								</p>
 							</motion.div>
 						)}
