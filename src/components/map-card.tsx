@@ -51,7 +51,8 @@ const MapCard = () => {
 										3D Data Visualization
 									</h2>
 									<p className="bg-black/50x font-light text-neutral-500">
-										Visualizing geospatial data in Hong Kong on a 3D, interactive map.
+										Visualizing geospatial data in Hong Kong on a 3D,
+										interactive map.
 									</p>
 								</div>
 							</motion.div>
@@ -66,14 +67,17 @@ const MapCard = () => {
 								transition={{ duration: 0.6 }}
 								className="relative flex h-full flex-col space-y-8 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-20 [&::-webkit-scrollbar]:hidden"
 							>
-								<div className="flex flex-col space-y-1">
-									<div className="flex flex-row items-center justify-start space-x-12">
-										<h1 className="text-5xl font-semibold">Fifth Tees</h1>
-									</div>
-									<p className="mt-2 text-lg text-neutral-400">
-										A small e-commerce website for selling t-shirts and
-										stickers.
+								<div className="mt-12 flex flex-col space-y-1 sm:px-12">
+									<h1 className="text-4xl font-semibold sm:text-5xl">
+										3D Data Visualization
+									</h1>
+									<p className="text-md mt-2 text-neutral-400 sm:text-lg">
+										Visualizing geospatial data in Hong Kong on a 3D,
+										interactive map. Built with Vite, React, Deck.gl.
 									</p>
+									<div className="md:text-md w-fit rounded-xl border border-zinc-700 bg-zinc-800 p-1 px-2 text-sm text-zinc-500">
+										Work in Progress
+									</div>
 								</div>
 								<WebFrame>
 									<Image
@@ -84,7 +88,7 @@ const MapCard = () => {
 									/>
 								</WebFrame>
 								<p className="text-xl text-neutral-400">
-									I've been designing T-Shirts Lorem ipsum dolor, sit amet
+									I&apos;ve been designing T-Shirts Lorem ipsum dolor, sit amet
 									consectetur adipisicing elit. Provident nam fugiat officiis
 									odio iusto sit sint eos vero et perferendis quod, illum rerum
 									ipsa, labore libero veritatis explicabo ea? Eum.

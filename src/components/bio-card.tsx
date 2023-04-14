@@ -15,10 +15,10 @@ export default function BioCard() {
 					alt="Marco"
 				/>
 				<h2 className="text-2xl sm:text-3xl font-medium leading-4 text-white sm:ml-52">
-					Hi! I'm Marco
+					Hi! I&apos;m Marco
 				</h2>
 				<h2 className="mt-2 sm:mt-0 text-xl sm:text-2xl font-normal text-neutral-500 sm:ml-52">
-					I'm interested in react, framer motion, three.js and building cool
+					I&apos;m interested in react, framer motion, three.js and building cool
 					stuff.
 				</h2>
 				<div className="mt-6 flex flex-row items-center text-white sm:ml-52 flex-wrap gap-2">

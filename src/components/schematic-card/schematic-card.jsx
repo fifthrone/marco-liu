@@ -508,16 +508,44 @@ const SchematicCard = (props) => {
 									</div>
 								</div>
 								<div>
-									<p className="sm:text-md mb-1 text-sm text-neutral-400 sm:px-12 font-light">
-										Here's a little demo (support desktop only):
+									<p className="sm:text-md mb-1 text-sm font-light text-neutral-400 sm:px-12">
+										Here&apos;s a little demo (support desktop only):
 									</p>
 									<WebFrame>
 										<DrawingTools />
 									</WebFrame>
 								</div>
-								<p className="text-lg text-neutral-400 sm:px-12 sm:text-xl">
-									Built with React, React Flow, Zustand, Typescript and Tailwind
-									CSS
+								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									Building a web app has been one of the main goals on my
+									frontend development journey. I&apos;ve been inspired by web
+									apps like Spline and Canva, which are as good as, or even
+									better than, traditional computer applications in some ways.
+									Features such as auto-save, platform independence, and easy
+									access from any device with an internet connection make these
+									apps stand out.
+								</p>
+								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									With that in mind, I challenged myself to create a schematic
+									drawing web app. I&apos;ve used software like Microsoft Visio
+									in the past, but I found that it&apos;s designed for general
+									purposes and isn&apos;t as effective for specific tasks like
+									schematic drawing.
+								</p>
+								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									To build the app, I utilized the powerful React Flow library,
+									which is great for creating node-based editors and offers a
+									lot of control and flexibility. I also developed custom
+									functions not included in React Flow, such as rotating and
+									flipping shapes, as well as snap helper lines. One of my
+									favorite features is the toolbar menu I added next to a shape, which allows
+									users to quickly add related shapes with a single click.
+								</p>
+								<p className="text-md pb-40 font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									Additionally, I experimented with Zustand, a lightweight
+									state-management library, and I&apos;m quite happy with the
+									results so far. With the basic functions I&apos;ve
+									implemented, I can now easily draw diagrams containing tens or
+									even hundreds of shapes in just a matter of minutes.
 								</p>
 							</motion.div>
 						)}

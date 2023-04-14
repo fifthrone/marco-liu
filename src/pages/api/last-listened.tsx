@@ -10,7 +10,7 @@ const api = new SpotifyWebApi({
 const handler = async(req: NextApiRequest, res: NextApiResponse) => {
 
     try {
-        api.setRefreshToken(process.env.SPOTIFY_REFRESH_TOKEN)
+        api.setRefreshToken(process.env.SPOTIFY_REFRESH_TOKEN!)
         const data = await api.refreshAccessToken()
          api.setAccessToken(data.body['access_token'])
 

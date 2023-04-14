@@ -58,7 +58,6 @@ export default async function TimeCard() {
 			<div className="absolute -bottom-[280%] left-1/2 flex h-[300%] w-[200%] -translate-x-1/2 items-center justify-center overflow-hidden rounded-full bg-sky-900">
 				<div className="h-[95%] w-[95%] rounded-full bg-sky-700 blur-md"></div>
 			</div>
-			//{" "}
 		</div>
 	);
 }

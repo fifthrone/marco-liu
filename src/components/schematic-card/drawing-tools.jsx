@@ -152,7 +152,7 @@ function DrawingTools() {
   //   save();
   // }, [nodes, edges, viewport]);
 
-  console.log({ nodes, edges });
+  // console.log({ nodes, edges });
   return (
     <ReactFlowProvider>
       <div className="flex flex-row w-full h-[550px] bg-white">

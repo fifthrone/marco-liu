@@ -152,15 +152,15 @@ export default function FifthTeesCard() {
 								</WebFrame>
 								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
 									Fifth Tees is an e-commerce website where I showcase my
-									t-shirt designs, which I've been selling on print-on-demand
+									t-shirt designs, which I&apos;ve been selling on print-on-demand
 									websites. I decided to challenge myself and build the website
-									from scratch. It's built using Next.js, React, Redux Toolkit,
+									from scratch. It&apos;s built using Next.js, React, Redux Toolkit,
 									Tailwind CSS, and Firebase. The site includes features like
 									user authentication, light and dark mode, as well as
 									persisting user cart and wishlist items between sign-in
-									sessions. Throughout the journey of building this app, I've
+									sessions. Throughout the journey of building this app, I&apos;ve
 									gained a solid understanding of concepts like server and
-									client components, state management, and I've generally had a
+									client components, state management, and I&apos;ve generally had a
 									lot of fun.
 								</p>
 								<WebFrame>
