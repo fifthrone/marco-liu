@@ -5,7 +5,6 @@ import IlluminatedCard from "@/components/illuminated-card";
 import PopToCenterCard from "@/components/pop-to-center-card";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import FifthTeesDemo from "../../../public/fifth-tees/fifth-tees-demo.png";
 import WebFrame from "@/components/web-frame";
 import DrawingTools from "@/components/schematic-card/drawing-tools";
 

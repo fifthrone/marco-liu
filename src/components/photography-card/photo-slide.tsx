@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import MountFuji from "../../public/photography/mount-fuji.jpg";
-import Shibuya from "../../public/photography/shibuya.jpg";
-import Dining from "../../public/photography/dining.jpg";
-import Asakusa from "../../public/photography/asakusa.jpg";
-import Fujiyoshida from "../../public/photography/fujiyoshida.jpg";
+import MountFuji from "../../../public/photography/mount-fuji.jpg";
+import Shibuya from "../../../public/photography/shibuya.jpg";
+import Dining from "../../../public/photography/dining.jpg";
+import Asakusa from "../../../public/photography/asakusa.jpg";
+import Fujiyoshida from "../../../public/photography/fujiyoshida.jpg";
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -12,35 +14,33 @@ export default function PhotoSlide() {
 	const [offset, setOffset] = useState(0);
 
 	const photoStack = [MountFuji, Shibuya, Dining, Asakusa, Fujiyoshida];
-	const styles = {
-		0: {
+	const styles = [
+		{
 			x: -336,
 			scale: 0.75,
 			opacity: 0,
-			// transitionEnd: { opacity: 1 },
 		},
-		1: {
+		{
 			x: -168,
 			scale: 0.75,
 			opacity: 1,
 		},
-		2: {
+		{
 			x: 0,
 			scale: 1,
 			opacity: 1,
 		},
-		3: {
+		{
 			x: 168,
 			scale: 0.75,
 			opacity: 1,
 		},
-		4: {
+		{
 			x: 336,
 			scale: 0.75,
 			opacity: 0,
-			// transitionEnd: { opacity: 0 },
 		},
-	};
+	];
 
 	useEffect(() => {
 		setOffset((offset) => offset + 1);

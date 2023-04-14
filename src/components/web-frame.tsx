@@ -1,4 +1,7 @@
-export default function WebFrame(props) {
+type WebFrameProps = {
+	children: React.ReactNode;
+};
+export default function WebFrame(props: WebFrameProps) {
 	const { children } = props;
 	return (
 		<div className="flex h-auto flex-col">

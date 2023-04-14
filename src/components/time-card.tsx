@@ -1,49 +1,23 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import Clock from "@/components/clock";
 
 type WeatherData = {
 	temperature: number;
 	description: string;
 };
 
-const TimeCard = () => {
-	const [currentTime, setCurrentTime] = useState<Date | null>(null);
-	const [weather, setWeather] = useState<WeatherData | null>(null);
+async function getData() {
+	const response = await fetch(
+		`http://localhost:3000/api/weather?location=Hong+Kong`
+	);
+	if (!response.ok) {
+		throw new Error("Failed to fetch weather data");
+	}
+	return response.json();
+}
 
-	useEffect(() => {
-		setCurrentTime(new Date());
-		const timer = setInterval(() => {
-			setCurrentTime(new Date());
-		}, 1000);
-		return () => clearInterval(timer);
-	}, []);
-
-	useEffect(() => {
-		const fetchWeather = async () => {
-			try {
-				const response = await fetch(`/api/weather?location=Hong+Kong`);
-				if (!response.ok) {
-					throw new Error("Failed to fetch weather data");
-				}
-				const data = await response.json();
-				setWeather(data);
-			} catch (error) {
-				console.log(error);
-			}
-		};
-		fetchWeather();
-	}, []);
-
-	const formattedTime =
-		currentTime &&
-		currentTime
-			.toLocaleTimeString([], {
-				hour12: true,
-				hour: "2-digit",
-				minute: "2-digit",
-			})
-			.toLocaleLowerCase();
+export default async function TimeCard() {
+	const weather: WeatherData = await getData();
+	// console.log(weather);
 
 	return (
 		<div
@@ -65,15 +39,8 @@ const TimeCard = () => {
             rgb(34, 34, 34) 100%)`,
 			}}
 		>
-			{/* <p className="text-md text-neutral-500">It is now</p> */}
-			{formattedTime && (
-				<>
-					<div className="text-4xl tracking-wide text-white">
-						{formattedTime}
-					</div>
-					<p className="text-md text-neutral-500">in Hong Kong</p>
-				</>
-			)}
+			<Clock />
+			<p className="text-md text-neutral-500">in Hong Kong</p>
 			{weather && (
 				<div className="mt-6 text-4xl tracking-wide text-white">
 					{Math.round(weather.temperature)}°C
@@ -91,8 +58,7 @@ const TimeCard = () => {
 			<div className="absolute -bottom-[280%] left-1/2 flex h-[300%] w-[200%] -translate-x-1/2 items-center justify-center overflow-hidden rounded-full bg-sky-900">
 				<div className="h-[95%] w-[95%] rounded-full bg-sky-700 blur-md"></div>
 			</div>
+			//{" "}
 		</div>
 	);
-};
-
-export default TimeCard;
+}

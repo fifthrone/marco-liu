@@ -17,7 +17,7 @@ import GlowLink from "@/components/glow-link";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
-const FifthTeesCard = (props) => {
+export default function FifthTeesCard() {
 	const [pop, setPop] = useState(false);
 
 	return (
@@ -133,7 +133,7 @@ const FifthTeesCard = (props) => {
 										<h1 className="text-4xl font-semibold sm:text-5xl">
 											Fifth Tees
 										</h1>
-										<GlowLink>Check it out</GlowLink>
+										<GlowLink href="https://fifth-tees.vercel.app">Check it out</GlowLink>
 									</div>
 									<p className="text-md mt-2 text-neutral-400 sm:text-lg">
 										A small e-commerce website for selling t-shirts and
@@ -192,4 +192,3 @@ const FifthTeesCard = (props) => {
 	);
 };
 
-export default FifthTeesCard;

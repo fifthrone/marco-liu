@@ -15,7 +15,7 @@ import GlowLink from "@/components/glow-link";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
-const MapCard = (props) => {
+const MapCard = () => {
 	const [pop, setPop] = useState(false);
 
 	return (
@@ -69,7 +69,6 @@ const MapCard = (props) => {
 								<div className="flex flex-col space-y-1">
 									<div className="flex flex-row items-center justify-start space-x-12">
 										<h1 className="text-5xl font-semibold">Fifth Tees</h1>
-										<GlowLink>Check it out</GlowLink>
 									</div>
 									<p className="mt-2 text-lg text-neutral-400">
 										A small e-commerce website for selling t-shirts and
