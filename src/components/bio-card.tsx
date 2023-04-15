@@ -10,18 +10,18 @@ export default function BioCard() {
 			<div className="absolute -inset-1 rounded-[30px] bg-gradient-to-r from-amber-400 via-green-400 to-purple-500 opacity-75 blur-3xl duration-500 group-hover:opacity-100"></div>
 			<div className="relative w-full overflow-hidden rounded-[30px] border border-neutral-500/30 bg-black p-6 shadow-sm backdrop-blur">
 				<Image
-					className="static mb-6 sm:mb-0 -bottom-2 left-6 h-auto w-20 sm:absolute sm:w-44"
+					className="static -bottom-2 left-6 mb-6 h-auto w-20 sm:absolute sm:mb-0 sm:w-44"
 					src={marcoLiuIcon}
 					alt="Marco"
 				/>
-				<h2 className="text-2xl sm:text-3xl font-medium leading-4 text-white sm:ml-52">
+				<h2 className="text-2xl font-medium leading-4 text-white sm:ml-52 sm:text-3xl">
 					Hi! I&apos;m Marco
 				</h2>
-				<h2 className="mt-2 sm:mt-0 text-xl sm:text-2xl font-normal text-neutral-500 sm:ml-52">
-					I&apos;m interested in react, framer motion, three.js and building cool
-					stuff.
+				<h2 className="mt-2 text-xl font-normal text-neutral-500 sm:ml-52 sm:mt-0 sm:text-2xl">
+					I&apos;m interested in react, animation, three.js, photography and
+					building cool stuff.
 				</h2>
-				<div className="mt-6 flex flex-row items-center text-white sm:ml-52 flex-wrap gap-2">
+				<div className="mt-6 flex flex-row flex-wrap items-center gap-2 text-white sm:ml-52">
 					<Link
 						href={"mailto:marco531531@gmail.com"}
 						className="flex flex-row items-center space-x-2 rounded-xl bg-yellow-400/20 p-2 px-3 text-yellow-400 duration-300 hover:-translate-y-0.5 hover:bg-yellow-400/30 hover:text-yellow-300"

@@ -537,15 +537,16 @@ const SchematicCard = (props) => {
 									lot of control and flexibility. I also developed custom
 									functions not included in React Flow, such as rotating and
 									flipping shapes, as well as snap helper lines. One of my
-									favorite features is the toolbar menu I added next to a shape, which allows
-									users to quickly add related shapes with a single click.
+									favorite features is the toolbar menu I added next to a shape,
+									which allows users to quickly add a auto-connected neighbour
+									shapes with a single click.
 								</p>
 								<p className="text-md pb-40 font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
 									Additionally, I experimented with Zustand, a lightweight
 									state-management library, and I&apos;m quite happy with the
 									results so far. With the basic functions I&apos;ve
-									implemented, I can now easily draw diagrams containing tens or
-									even hundreds of shapes in just a matter of minutes.
+									implemented, I can already draw diagrams containing tens or
+									hundreds of shapes in just a matter of minutes.
 								</p>
 							</motion.div>
 						)}

@@ -5,9 +5,9 @@ import IlluminatedCard from "@/components/illuminated-card";
 import PopToCenterCard from "@/components/pop-to-center-card";
 import { GlobeAmericasIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
-import FifthTeesDemo from "../../public/fifth-tees/fifth-tees-demo.png";
 import WebFrame from "@/components/web-frame";
 
+import MapDemo from "../../public/3d-map/demo.png";
 import Map from "../../public/3d-map/map.png";
 
 import GlowLink from "@/components/glow-link";
@@ -83,15 +83,38 @@ const MapCard = () => {
 									<Image
 										width={1280}
 										height={898}
-										src={FifthTeesDemo}
-										alt="A screenshot from the Fifth Tees Website"
+										src={MapDemo}
+										alt="A screenshot from 3D Data Visualization"
 									/>
 								</WebFrame>
-								<p className="text-xl text-neutral-400">
-									I&apos;ve been designing T-Shirts Lorem ipsum dolor, sit amet
-									consectetur adipisicing elit. Provident nam fugiat officiis
-									odio iusto sit sint eos vero et perferendis quod, illum rerum
-									ipsa, labore libero veritatis explicabo ea? Eum.
+								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									Recently, I&apos;ve been working on a project where I created a
+									website that displays a 3D map for exploring geospatial data.
+									I used tools like Vite, React, and Deck.gl to bring it all
+									together. WebGL is the technology that make 3D graphics
+									possible on websites, it utilizes the computer&apos;s GPU to render
+									complex graphics efficiently and smoothly. I also used
+									Deck.gl, a WebGL framework created by Uber. It takes care of
+									the coordinate systems, ensuring the precision and correctness
+									of the locations on the map . A 3D map offers a much more
+									enjoyable and engaging experience compared to a simple 2D one
+									beacuse it allows user to explore with different perspective.
+								</p>
+								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									To construct my app, I used geojson data for building heatmap
+									layer with depth and added some features like dynamic lighting
+									and a camera to make the map more relistic. To further enhance
+									the user experience, I included tooltips that provide
+									additional information when you hover over specific points or
+									regions on the map.
+								</p>
+								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
+									While working on this project, I&apos;ve learned more about
+									geospatial data visualization and the technologies that make
+									it possible. It&apos;s been an incredible journey, and I&apos;m
+									surprised with how all these tools and libraries have come
+									together to create a unique and captivating experience for
+									users.
 								</p>
 							</motion.div>
 						)}
