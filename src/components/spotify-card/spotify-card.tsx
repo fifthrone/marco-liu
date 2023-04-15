@@ -1,13 +1,41 @@
 import Image from "next/image";
 import GlowLink from "../glow-link";
 import SpotifyPopCard from "./spotify-pop-card";
+import SpotifyWebApi from "spotify-web-api-node";
+
+const api = new SpotifyWebApi({
+	clientId: process.env.SPOTIFY_ID,
+	clientSecret: process.env.SPOTIFY_SECRET,
+	redirectUri: process.env.SPOTIFY_REDIRECT,
+});
 
 async function getData() {
-	const response = await fetch(`http://localhost:3000/api/last-listened`);
-	if (!response.ok) {
-		throw new Error("Failed to fetch weather data");
+	try {
+		api.setRefreshToken(process.env.SPOTIFY_REFRESH_TOKEN!);
+		const data = await api.refreshAccessToken();
+		api.setAccessToken(data.body["access_token"]);
+
+		const recentTracks = await api.getMyRecentlyPlayedTracks({
+			limit: 1,
+		});
+		return recentTracks.body.items[0].track;
+	} catch (err) {
+		console.log("Something went wrong!", err);
+		return {
+			album: {
+				images: [
+					{
+						url: "https://i.scdn.co/image/ab67616d0000b273926f43e7cce571e62720fd46",
+					},
+				],
+			},
+			artists: [{ name: "Bruno Mars" }],
+			external_urls: {
+				spotify: "https://open.spotify.com/track/0nJW01T7XtvILxQgC5J7Wh",
+			},
+			name: "When I Was Your Man",
+		};
 	}
-	return response.json();
 }
 
 export default async function SpotifyCard() {

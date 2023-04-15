@@ -6,13 +6,21 @@ type WeatherData = {
 };
 
 async function getData() {
-	const response = await fetch(
-		`http://localhost:3000/api/weather?location=Hong+Kong`
-	);
+	const apiKey = process.env.OPEN_WEATHER_API_KEY;
+	const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Hong+Kong&units=metric&appid=${apiKey}`;
+	const response = await fetch(apiUrl);
+
 	if (!response.ok) {
-		throw new Error("Failed to fetch weather data");
+		return { temperature: 20, description: "sunny" };
 	}
-	return response.json();
+
+	const data = await response.json();
+	const weather: WeatherData = {
+		temperature: Math.round(data.main.temp),
+		description: data.weather[0].description,
+	};
+
+	return weather;
 }
 
 export default async function TimeCard() {
@@ -50,7 +58,7 @@ export default async function TimeCard() {
 				<div className="text-md text-neutral-500">{weather.description}</div>
 			)}
 			<div className="absolute -bottom-[250%] left-1/2 flex h-[300%] w-[200%] -translate-x-1/2 items-center justify-center rounded-full">
-				<div className="bg-sky-950/75 h-[95%] w-[95%] rounded-full blur-xl"></div>
+				<div className="h-[95%] w-[95%] rounded-full bg-sky-950/75 blur-xl"></div>
 			</div>
 			<div className="absolute -bottom-[270%] left-1/2 flex h-[300%] w-[200%] -translate-x-1/2 items-center justify-center overflow-hidden rounded-full border border-sky-800/25 bg-sky-900/20">
 				<div className="h-[96%] w-[96%] rounded-full bg-sky-900/75 blur-md"></div>
