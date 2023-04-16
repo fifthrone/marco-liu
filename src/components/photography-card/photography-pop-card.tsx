@@ -37,7 +37,7 @@ export default function PhotographyPopCard(props: PhotographyPopCardProps) {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className={`relative h-full w-full overflow-hidden`}
+								className={`relative h-full w-full overflow-hidden rounded-[30px]`}
 							>
 								{unPopCard}
 							</motion.div>
@@ -50,7 +50,7 @@ export default function PhotographyPopCard(props: PhotographyPopCardProps) {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className="h-full"
+								className="h-full rounded-[30px]"
 								// className="relative flex h-full flex-col space-y-8 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-20 [&::-webkit-scrollbar]:hidden"
 							>
 								{popCard}

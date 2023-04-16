@@ -34,7 +34,7 @@ const MapCard = () => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className={`relative h-full w-full overflow-hidden p-6`}
+								className={`relative h-full w-full overflow-hidden rounded-[30px] p-6`}
 							>
 								<Image
 									src={Map}
@@ -65,7 +65,7 @@ const MapCard = () => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className="relative flex h-full flex-col space-y-8 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-20 [&::-webkit-scrollbar]:hidden"
+								className="relative flex h-full flex-col space-y-8 overflow-y-scroll rounded-[30px] bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:p-20 [&::-webkit-scrollbar]:hidden"
 							>
 								<div className="mt-12 flex flex-col space-y-1 sm:px-12">
 									<h1 className="text-4xl font-semibold sm:text-5xl">
@@ -88,12 +88,12 @@ const MapCard = () => {
 									/>
 								</WebFrame>
 								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
-									Recently, I&apos;ve been working on a project where I created a
-									website that displays a 3D map for exploring geospatial data.
-									I used tools like Vite, React, and Deck.gl to bring it all
-									together. WebGL is the technology that make 3D graphics
-									possible on websites, it utilizes the computer&apos;s GPU to render
-									complex graphics efficiently and smoothly. I also used
+									Recently, I&apos;ve been working on a project where I created
+									a website that displays a 3D map for exploring geospatial
+									data. I used tools like Vite, React, and Deck.gl to bring it
+									all together. WebGL is the technology that make 3D graphics
+									possible on websites, it utilizes the computer&apos;s GPU to
+									render complex graphics efficiently and smoothly. I also used
 									Deck.gl, a WebGL framework created by Uber. It takes care of
 									the coordinate systems, ensuring the precision and correctness
 									of the locations on the map . A 3D map offers a much more
@@ -111,10 +111,10 @@ const MapCard = () => {
 								<p className="text-md font-light leading-relaxed text-neutral-400 sm:px-12 sm:text-xl sm:leading-relaxed">
 									While working on this project, I&apos;ve learned more about
 									geospatial data visualization and the technologies that make
-									it possible. It&apos;s been an incredible journey, and I&apos;m
-									surprised with how all these tools and libraries have come
-									together to create a unique and captivating experience for
-									users.
+									it possible. It&apos;s been an incredible journey, and
+									I&apos;m surprised with how all these tools and libraries have
+									come together to create a unique and captivating experience
+									for users.
 								</p>
 							</motion.div>
 						)}

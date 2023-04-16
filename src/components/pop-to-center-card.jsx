@@ -13,7 +13,14 @@ import {
 } from "framer-motion";
 
 const PopToCenterCard = (props) => {
-	const { children, className, pop, onPopChange, poppedWidth=1000, poppedHeight=600 } = props;
+	const {
+		children,
+		className,
+		pop,
+		onPopChange,
+		poppedWidth = 1000,
+		poppedHeight = 600,
+	} = props;
 
 	// const poppedWidth = 1000;
 	// const poppedHeight = 600;
@@ -103,8 +110,7 @@ const PopToCenterCard = (props) => {
 								y: 0,
 						  }
 				}
-				style={{ y }}
-				// transition={{ duration }}
+				// style={{ y }}
 				whileTap={popState ? { scale: 1 } : { scale: 0.95 }}
 				className={`absolute`}
 			>
@@ -114,7 +120,7 @@ const PopToCenterCard = (props) => {
 							onClick={() => {
 								setPopState(false);
 							}}
-							className="absolute right-4 top-4 z-40 flex items-center justify-center rounded-full bg-neutral-700 p-1 hover:bg-neutral-600 duration-300"
+							className="absolute right-4 top-4 z-40 flex items-center justify-center rounded-full bg-neutral-700 p-1 duration-300 hover:bg-neutral-600"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}

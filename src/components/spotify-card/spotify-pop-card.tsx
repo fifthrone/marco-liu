@@ -43,7 +43,7 @@ export default function SpotifyPopCard(props: SpotifyPopCardProps) {
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0, transition: { duration: 0.1 } }}
 							transition={{ duration: 0.6 }}
-							className="relative flex h-full flex-col overflow-y-scroll bg-neutral-900 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+							className="relative flex h-full flex-col overflow-y-scroll rounded-[30px] bg-neutral-900 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
 						>
 							{popCard}
 						</motion.div>

@@ -493,7 +493,7 @@ const SchematicCard = (props) => {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0, transition: { duration: 0.1 } }}
 								transition={{ duration: 0.6 }}
-								className="relative flex h-full flex-col space-y-6 overflow-y-scroll bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:space-y-12 sm:p-20 [&::-webkit-scrollbar]:hidden"
+								className="relative flex h-full flex-col space-y-6 overflow-y-scroll rounded-[30px] bg-neutral-900 p-4 text-white [-ms-overflow-style:'none'] [scrollbar-width:'none'] sm:space-y-12 sm:p-20 [&::-webkit-scrollbar]:hidden"
 							>
 								<div className="mt-12 flex flex-col space-y-1 sm:px-12">
 									<h1 className="text-4xl font-semibold sm:text-5xl">
