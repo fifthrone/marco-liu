@@ -3,7 +3,7 @@ import PhotographyCard from "@/components/photography-card/photography-card";
 import SpotifyCard from "@/components/spotify-card/spotify-card";
 import LocationCard from "@/components/location-card";
 import MapCard from "@/components/map-card";
-import BioCard from "@/components/bio-card";
+import BioCard from "@/components/bio-card/bio-card";
 import TimeCard from "@/components/time-card";
 import Footer from "@/components/footer";
 import SchematicCard from "@/components/schematic-card/schematic-card";

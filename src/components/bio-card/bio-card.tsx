@@ -1,19 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import marcoLiuIcon from "../../public/marco-liu.png";
+import marcoLiuIcon from "../../../public/marco-liu.png";
+import Avatar from "./avatar";
 
 export default function BioCard() {
 	return (
 		<div className="group relative h-full">
 			<div className="absolute -inset-1 rounded-[30px] bg-gradient-to-r from-amber-400 via-green-400 to-purple-500 opacity-50 blur-md duration-500 md:group-hover:opacity-100"></div>
 			<div className="absolute -inset-1 rounded-[30px] bg-gradient-to-r from-amber-400 via-green-400 to-purple-500 opacity-75 blur-3xl duration-500 md:group-hover:opacity-100"></div>
-			<div className="relative w-full overflow-hidden rounded-[30px] border border-neutral-500/30 bg-black p-6 shadow-sm backdrop-blur">
-				<Image
+			<div className="xshadow-sm xbackdrop-blur relative w-full overflow-hidden rounded-[30px] border border-neutral-500/30 bg-black p-6">
+				{/* <Image
 					className="static -bottom-2 left-6 mb-6 h-auto w-20 sm:absolute sm:mb-0 sm:w-44"
 					src={marcoLiuIcon}
 					alt="Marco"
-				/>
+				/> */}
+				<div className="mb-6 w-40 h-40 xborder sm:absolute sm:bottom-0 sm:left-6 sm:top-0 sm:mb-0 sm:w-44 sm:h-auto">
+					<Avatar />
+				</div>
 				<h2 className="text-2xl font-medium leading-4 text-white sm:ml-52 sm:text-3xl">
 					Hi! I&apos;m Marco
 				</h2>

@@ -26,7 +26,7 @@ const PopToCenterCard = (props) => {
 	// const poppedHeight = 600;
 	const duration = 0.8;
 
-	const { scrollY } = useScroll();
+	// const { scrollY } = useScroll();
 	const [isPopped, setIsPopped] = useState(false);
 
 	const popState = pop === undefined ? isPopped : pop;
@@ -36,16 +36,16 @@ const PopToCenterCard = (props) => {
 	const [windowWidth, windowHeight] = useWindowSize();
 	const ref = useRef(null);
 
-	useEffect(() => {
-		return scrollY.on("change", (current) => {
-			const previous = scrollY.getPrevious();
-			const diff = current - previous;
+	// useEffect(() => {
+	// 	return scrollY.on("change", (current) => {
+	// 		const previous = scrollY.getPrevious();
+	// 		const diff = current - previous;
 
-			if (popState) {
-				y.set(y.get() + diff);
-			}
-		});
-	}, [popState, scrollY]);
+	// 		if (popState) {
+	// 			y.set(y.get() + diff);
+	// 		}
+	// 	});
+	// }, [popState, scrollY, y]);
 
 	const refBoxOffset = ref.current
 		? {
