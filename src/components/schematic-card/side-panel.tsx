@@ -2,10 +2,14 @@
 
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 
-function SidePanel({ className }) {
-	const onDragStart = (event, nodeType) => {
-		event.dataTransfer.setData("application/reactflow", nodeType);
-		event.dataTransfer.effectAllowed = "move";
+type SidePanelProps = {
+	className?: string;
+};
+
+function SidePanel({ className }: SidePanelProps) {
+	const onDragStart = (event: React.DragEvent<HTMLDivElement>, nodeType: string) => {
+		event!.dataTransfer!.setData("application/reactflow", nodeType);
+		event!.dataTransfer!.effectAllowed = "move";
 	};
 
 	return (
@@ -24,13 +28,13 @@ function SidePanel({ className }) {
 					draggable
 				>
 					<div className="relative h-9 w-14 scale-75 border border-black">
-						<div className="absolute top-0 left-8 h-2 w-4 bg-black"></div>
+						<div className="absolute left-8 top-0 h-2 w-4 bg-black"></div>
 						<div className="absolute left-3 top-0 h-4 w-[1px] -translate-x-1/2 bg-black"></div>
-						<div className="absolute left-3 right-3 top-0 h-4 border-r border-b border-black"></div>
-						<hr className="absolute top-6 right-0 left-0 -translate-y-1/2 border-black"></hr>
-						<div className="absolute top-6 left-1 h-[6px] w-[6px] -translate-y-1/2 rotate-45 border-t border-r border-black"></div>
-						<div className="absolute top-6 left-10 h-[6px] w-[6px] -translate-y-1/2 rotate-45 border-t border-r border-black"></div>
-						<div className="absolute top-[6px] left-3 h-[6px] w-[6px] -translate-x-1/2 -rotate-45 border-t border-r border-black"></div>
+						<div className="absolute left-3 right-3 top-0 h-4 border-b border-r border-black"></div>
+						<hr className="absolute left-0 right-0 top-6 -translate-y-1/2 border-black"></hr>
+						<div className="absolute left-1 top-6 h-[6px] w-[6px] -translate-y-1/2 rotate-45 border-r border-t border-black"></div>
+						<div className="absolute left-10 top-6 h-[6px] w-[6px] -translate-y-1/2 rotate-45 border-r border-t border-black"></div>
+						<div className="absolute left-3 top-[6px] h-[6px] w-[6px] -translate-x-1/2 -rotate-45 border-r border-t border-black"></div>
 					</div>
 					<h2 className="text-sm">Coupler</h2>
 				</div>

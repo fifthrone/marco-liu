@@ -15,7 +15,7 @@ export default function BioCard() {
 					src={marcoLiuIcon}
 					alt="Marco"
 				/> */}
-				<div className="mb-6 w-40 h-40 xborder sm:absolute sm:bottom-0 sm:left-6 sm:top-0 sm:mb-0 sm:w-44 sm:h-auto">
+				<div className="xborder mb-6 h-40 w-40 sm:absolute sm:bottom-0 sm:left-6 sm:top-0 sm:mb-0 sm:h-auto sm:w-44">
 					<Avatar />
 				</div>
 				<h2 className="text-2xl font-medium leading-4 text-white sm:ml-52 sm:text-3xl">
@@ -45,6 +45,8 @@ export default function BioCard() {
 					</Link>
 					<Link
 						href={"https://www.linkedin.com/in/liu-wing-hin/"}
+						target="_blank"
+						rel="noopener noreferrer"
 						className="flex flex-row items-center space-x-2 rounded-xl bg-yellow-400/20 p-2 px-3 text-yellow-400 duration-300 hover:-translate-y-0.5 hover:bg-yellow-400/30 hover:text-yellow-300"
 					>
 						<svg
@@ -62,6 +64,8 @@ export default function BioCard() {
 					</Link>
 					<Link
 						href={"https://github.com/fifthrone"}
+						target="_blank"
+						rel="noopener noreferrer"
 						className="flex flex-row items-center space-x-2 rounded-xl bg-yellow-400/20 p-2 px-3 text-yellow-400 duration-300 hover:-translate-y-0.5 hover:bg-yellow-400/30 hover:text-yellow-300"
 					>
 						<svg

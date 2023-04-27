@@ -72,7 +72,7 @@ const initialNodes: Node[] = [
 			flipY: false,
 		},
 		id: "d74eda08-4466-4f10-a7ac-ea85841b9fe0",
-		position: {x: 200.75243659645975, y: 161.47592937356967},
+		position: { x: 200.75243659645975, y: 161.47592937356967 },
 		selected: true,
 		type: "coupler",
 	},
@@ -137,7 +137,7 @@ const initialEdges: Edge[] = [
 
 const initialViewport: Viewport = { x: 0, y: 100, zoom: 1 };
 
-type RFState = {
+export type RFState = {
 	nodes: Node[];
 	edges: Edge[];
 	viewport: Viewport;
@@ -148,12 +148,17 @@ type RFState = {
 	onEdgesChange: OnEdgesChange;
 	onConnect: OnConnect;
 	addNode: (newNode: Node) => void;
+	addEdge: (newEdge: Edge) => void;
 	updateNodeCouplerId: (nodeId: string, couplerId: string) => void;
 	updateNodeCouplerLoss: (nodeId: string, couplerId: number) => void;
+	updateNodeCouplerRotation: (nodeId: string, rotation: number) => void;
+	updateNodeCouplerFlipX: (nodeId: string, flipX: boolean) => void;
+	updateNodeCouplerFlipY: (nodeId: string, flipY: boolean) => void;
 	updateNodeOmniId: (nodeId: string, omniId: string) => void;
 	updateNodeHybridId: (nodeId: string, hybridId: string) => void;
 	updateEdgeFeederId: (edgeId: string, feederId: string) => void;
 	updateEdgeFeederLength: (edgeId: string, feederLength: number) => void;
+	deselectNode: (nodeId: string) => void;
 };
 
 // this is our useStore hook that we can use in our components to get parts of the store and call actions

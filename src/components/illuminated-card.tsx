@@ -35,10 +35,16 @@ const hoverStyle = {
 		rgb(64, 54, 32) 100%)`,
 };
 
-function IlluminatedCard(props) {
+type IlluminatedCardProps = {
+	children: React.ReactNode;
+	className?: string;
+	pop: boolean;
+};
+
+function IlluminatedCard(props: IlluminatedCardProps) {
 	const { children, className, pop } = props;
 
-	const [isMobile, setIsMobile] = useState(null);
+	const [isMobile, setIsMobile] = useState<boolean | null>(null);
 	const ref = useRef(null);
 	const mouse = useMouse(ref);
 
@@ -49,16 +55,16 @@ function IlluminatedCard(props) {
 	const maxRotation = 8;
 
 	const transformerX = transform(
-		[0, mouse.elementWidth],
+		[0, mouse.elementWidth!],
 		[-maxRotation, maxRotation]
 	);
 	const transformerY = transform(
-		[0, mouse.elementHeight],
+		[0, mouse.elementHeight!],
 		[maxRotation, -maxRotation]
 	);
 
-	const rotateX = mouse.isOver ? transformerY(mouse.y) : 0;
-	const rotateY = mouse.isOver ? transformerX(mouse.x) : 0;
+	const rotateX = mouse.isOver ? transformerY(mouse.y!) : 0;
+	const rotateY = mouse.isOver ? transformerX(mouse.x!) : 0;
 
 	return (
 		<div

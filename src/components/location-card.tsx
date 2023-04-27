@@ -3,7 +3,7 @@ import Location from "../../public/location/location.png";
 import MarcoLiuIcon from "../../public/marco-liu-3.png";
 import { MapPinIcon } from "@heroicons/react/20/solid";
 
-const LocationCard = (props) => {
+const LocationCard = () => {
 	return (
 		<div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[30px]">
 			<div className="absolute inset-0 overflow-hidden">

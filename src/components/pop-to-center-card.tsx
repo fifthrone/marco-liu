@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import { PlusSmallIcon } from "@heroicons/react/24/solid";
+import { Dispatch, SetStateAction } from "react";
 
 import {
 	AnimatePresence,
@@ -12,7 +13,16 @@ import {
 	useScroll,
 } from "framer-motion";
 
-const PopToCenterCard = (props) => {
+type PopToCenterCardProps = {
+	children: React.ReactNode;
+	className?: string;
+	pop: boolean;
+	onPopChange: Dispatch<SetStateAction<boolean>>;
+	poppedWidth?: number;
+	poppedHeight?: number;
+};
+
+const PopToCenterCard = (props: PopToCenterCardProps) => {
 	const {
 		children,
 		className,
@@ -22,8 +32,6 @@ const PopToCenterCard = (props) => {
 		poppedHeight = 600,
 	} = props;
 
-	// const poppedWidth = 1000;
-	// const poppedHeight = 600;
 	const duration = 0.8;
 
 	// const { scrollY } = useScroll();
@@ -34,7 +42,7 @@ const PopToCenterCard = (props) => {
 	const y = useMotionValue(0);
 
 	const [windowWidth, windowHeight] = useWindowSize();
-	const ref = useRef(null);
+	const ref = useRef<HTMLDivElement | null>(null);
 
 	// useEffect(() => {
 	// 	return scrollY.on("change", (current) => {
@@ -102,15 +110,15 @@ const PopToCenterCard = (props) => {
 								right: 0,
 								top: 0,
 								bottom: 0,
-								transition: {
-									zIndex: { delay: duration },
-									type: "spring",
-									mass: 0.5,
-								},
+								// transition: {
+								// 	type: "spring",
+								// 	mass: 0.5,
+								// },
 								y: 0,
 						  }
 				}
 				// style={{ y }}
+				transition={popState ? {} : { zIndex: { delay: duration } }}
 				whileTap={popState ? { scale: 1 } : { scale: 0.95 }}
 				className={`absolute`}
 			>

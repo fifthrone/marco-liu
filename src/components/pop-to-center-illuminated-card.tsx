@@ -4,9 +4,13 @@ import { useState } from "react";
 import IlluminatedCard from "@/components/illuminated-card";
 import PopToCenterCard from "@/components/pop-to-center-card";
 
-const PopToCenterIlluminatedCard = (props) => {
+type PopToCenterIlluminatedCard = {
+	children?: React.ReactNode;
+};
+
+const PopToCenterIlluminatedCard = (props: PopToCenterIlluminatedCard) => {
 	const { children } = props;
-	const [pop, setPop] = useState(false);
+	const [pop, setPop] = useState<boolean>(false);
 
 	return (
 		<PopToCenterCard className="h-80" pop={pop} onPopChange={setPop}>

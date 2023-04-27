@@ -19,6 +19,7 @@ export default function Home() {
 					<SchematicCard />
 				</div>
 				<div className="relative h-72 sm:h-80">
+					{/* @ts-expect-error Async Server Component */}
 					<SpotifyCard />
 				</div>
 				<div className="relative h-80">
@@ -34,6 +35,7 @@ export default function Home() {
 					<LocationCard />
 				</div>
 				<div className="relative h-80">
+					{/* @ts-expect-error Async Server Component */}
 					<TimeCard />
 				</div>
 			</div>

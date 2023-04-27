@@ -11,11 +11,7 @@ import DrawingTools from "@/components/schematic-card/drawing-tools";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
-function sleep(ms) {
-	return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-const SchematicCard = (props) => {
+const SchematicCard = () => {
 	const [pop, setPop] = useState(false);
 	const [show, setShow] = useState(true);
 

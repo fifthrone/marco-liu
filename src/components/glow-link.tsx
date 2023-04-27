@@ -12,6 +12,8 @@ export default function GlowLink(props: GlowLinkProps) {
 	return (
 		<Link
 			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
 			className="group-button relative w-fit"
 		>
 			<div className="absolute inset-0 rounded-full bg-purple-500 opacity-0 blur-lg duration-300 group-button-hover:opacity-100"></div>
