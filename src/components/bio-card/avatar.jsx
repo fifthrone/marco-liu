@@ -11,7 +11,6 @@ import { useMotionValue } from "framer-motion";
 
 function Model({ path, globalMouse }) {
 	const { scene, animations } = useLoader(GLTFLoader, path);
-  console.log(animations);
 	const modelRef = useRef();
 	const { camera } = useThree();
 	const [mixer] = useState(() => new THREE.AnimationMixer(scene));

@@ -22,7 +22,7 @@ export default function BioCard() {
 					Hi! I&apos;m Marco
 				</h2>
 				<h2 className="mt-2 text-xl font-normal text-neutral-500 sm:ml-52 sm:mt-0 sm:text-2xl">
-					I&apos;m interested in react, animation, three.js, photography and
+					I&apos;m interested in react, animation, three.js, making intuitive user interface and
 					building cool stuff.
 				</h2>
 				<div className="mt-6 flex flex-row flex-wrap items-center gap-2 text-white sm:ml-52">
