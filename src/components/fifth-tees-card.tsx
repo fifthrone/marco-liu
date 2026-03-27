@@ -114,7 +114,7 @@ export default function FifthTeesCard() {
 									</p>
 								</div>
 								<h1 className="mt-2 w-fit rounded-full border border-orange-600/75 px-2 text-xs font-light text-orange-600">
-									Porfolio
+									Portfolio
 								</h1>
 							</motion.div>
 						)}

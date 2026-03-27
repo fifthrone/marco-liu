@@ -44,7 +44,7 @@ const MapCard = () => {
 								<div className="space-y-2x relative flex h-full w-52 flex-col justify-center">
 									{/* <GlobeAmericasIcon className="mb-2 h-7 w-7 text-neutral-100" /> */}
 									<h1 className="mb-2 w-fit rounded-full border border-orange-600/75 px-2 text-xs font-light text-orange-600">
-										Porfolio
+										Portfolio
 									</h1>
 
 									<h2 className="mb-1 text-2xl font-medium text-neutral-100">

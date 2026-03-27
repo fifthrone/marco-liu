@@ -470,7 +470,7 @@ const SchematicCard = () => {
 
 									{/* <PencilIcon className="mb-2 h-5 w-5 text-neutral-100" /> */}
 									<h1 className="mb-2 w-fit rounded-full border border-orange-600/75 px-2 text-xs font-light text-orange-600">
-										Porfolio
+										Portfolio
 									</h1>
 									<h2 className="mb-1 text-2xl font-medium text-neutral-100">
 										Schematic Drawing Tools
